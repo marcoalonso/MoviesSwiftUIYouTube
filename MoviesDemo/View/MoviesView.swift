@@ -25,7 +25,7 @@ struct MoviesView: View {
                         LazyHGrid(rows: gridITemLayout, spacing: 20) {
                             ForEach(viewModel.upcomingMovies, id: \.id) { movie in
                                 NavigationLink {
-                                    EmptyView()
+                                    MovieDetailView(movie: movie)
                                 } label: {
                                     KFImage(URL(string: "\(Constants.urlImages)\(movie.poster_path ?? Constants.placeholder)"))
                                         .resizable()
@@ -34,6 +34,51 @@ struct MoviesView: View {
                                         }
                                         .cornerRadius(12)
                                         .frame(width: 150, height: 210)
+                                }
+                            }
+                        }
+                    }
+                    
+                    Text("Ahora en cartelera")
+                        .font(.title2)
+                        .foregroundColor(.black)
+                    
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: gridITemLayout, spacing: 20) {
+                            ForEach(viewModel.nowPlayingMovies, id: \.id) { movie in
+                                NavigationLink {
+                                    MovieDetailView(movie: movie)
+                                } label: {
+                                    KFImage(URL(string: "\(Constants.urlImages)\(movie.poster_path ?? Constants.placeholder)"))
+                                        .resizable()
+                                        .placeholder { progress in
+                                            ProgressView()
+                                        }
+                                        .cornerRadius(12)
+                                        .frame(width: 190, height: 260)
+                                }
+                            }
+                        }
+                    }
+                    
+                    Text("Tendencias")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.black)
+                    
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: gridITemLayout, spacing: 20) {
+                            ForEach(viewModel.trendingMovies, id: \.id) { movie in
+                                NavigationLink {
+                                    MovieDetailView(movie: movie)
+                                } label: {
+                                    KFImage(URL(string: "\(Constants.urlImages)\(movie.poster_path ?? Constants.placeholder)"))
+                                        .resizable()
+                                        .placeholder { progress in
+                                            ProgressView()
+                                        }
+                                        .cornerRadius(12)
+                                        .frame(width: 250, height: 220)
                                 }
                             }
                         }
