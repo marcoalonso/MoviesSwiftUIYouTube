@@ -162,6 +162,40 @@ class NetworkManager: NSObject {
         
     }
     
+    func searchMovies(name: String, completed: @escaping (Result<[DataMovie], APError>) -> Void ) {
+        guard let url = URL(string: "https://api.themoviedb.org/3/search/movie?api_key=2cfa8720256036601fb9ac4e4bce1a9b&language=es-MX&page=1&include_adult=false&query=\(name)") else {
+            completed(.failure(.invalidURL))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let _ = error {
+                completed(.failure(.unableToComplete))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completed(.failure(.invalidResponse))
+                return
+            }
+            
+            guard let data = data else {
+                completed(.failure(.invalidData))
+                return
+            }
+            
+            do {
+             let decoder = JSONDecoder()
+                let decodedResponse = try decoder.decode(MovieDataModel.self, from: data)
+                completed(.success(decodedResponse.results))
+            } catch {
+                print("Debug: error \(error.localizedDescription)")
+                completed(.failure(.decodingError))
+            }
+        }
+        task.resume()
+    }
+    
 }
 
 

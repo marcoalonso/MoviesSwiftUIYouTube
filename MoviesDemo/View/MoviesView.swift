@@ -41,7 +41,7 @@ struct MoviesView: View {
                     
                     Text("Ahora en cartelera")
                         .font(.title2)
-                        .foregroundColor(.black)
+                        .foregroundColor(.accentColor)
                     
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: gridITemLayout, spacing: 20) {
@@ -55,16 +55,15 @@ struct MoviesView: View {
                                             ProgressView()
                                         }
                                         .cornerRadius(12)
-                                        .frame(width: 190, height: 260)
+                                        .frame(width: 120, height: 170)
                                 }
                             }
                         }
                     }
                     
                     Text("Tendencias")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.black)
+                        .font(.title2)
+                        .foregroundColor(.accentColor)
                     
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: gridITemLayout, spacing: 20) {
@@ -78,7 +77,7 @@ struct MoviesView: View {
                                             ProgressView()
                                         }
                                         .cornerRadius(12)
-                                        .frame(width: 250, height: 220)
+                                        .frame(width: 250, height: 320)
                                 }
                             }
                         }

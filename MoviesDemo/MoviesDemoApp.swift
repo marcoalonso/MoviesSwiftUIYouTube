@@ -11,7 +11,7 @@ import SwiftUI
 struct MoviesDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            MoviesView()
+            MainTabView()
         }
     }
 }

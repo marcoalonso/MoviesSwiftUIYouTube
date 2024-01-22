@@ -11,6 +11,8 @@ import YouTubeiOSPlayerHelper
 
 struct MovieDetailView: View {
     @StateObject var viewModel = TrailerViewModel()
+    @State private var urlSelected = ""
+    @State private var showTrailer = false
     
     let movie: DataMovie
     
@@ -50,47 +52,37 @@ struct MovieDetailView: View {
                 //Trailers
                 ScrollView {
                     ForEach(viewModel.listOfTrailers, id: \.key) { trailer in
-                        HStack {
-                            AsyncImage(url: URL(string: "\(Constants.urlImages)\(movie.backdrop_path ?? "")")) { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                
-                            } placeholder: {
-                                ProgressView()
+                        TrailerCellView(urlMovie: movie.backdrop_path ?? "", trailer: trailer)
+                            .onTapGesture {
+                                self.urlSelected = trailer.key
+                                showTrailer = true
                             }
-                            .frame(width: 50, height: 50)
-                            .shadow(radius: 12)
-                            
-                            Spacer()
-                            
-                            VStack {
-                                Text(trailer.name)
-                                    .lineLimit(2)
-                                    .font(.body)
-                                    .foregroundColor(.red)
-                                
-                                Text(trailer.published_at.prefix(10) )
-                                    .font(.footnote)
-                            }
-                        }
                     }
                 }
+                .frame(height: 300)
                 
                 //Imagen
-                AsyncImage(url: URL(string: "\(Constants.urlImages)\(movie.backdrop_path ?? "")")) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                    
-                } placeholder: {
-                    ProgressView()
-                }
-                .frame(width: 200, height: 200)
+                RemoteImageMovie(url: movie.backdrop_path ?? "")
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 200)
+                    .shadow(radius: 12)
+                    .cornerRadius(12)
+                    .padding(.horizontal, 15)
+                
+                    .navigationBarItems(trailing: Button(action: {
+                        //Compartir
+                    }, label: {
+                        Image(systemName: "square.and.row.up.fill")
+                    }))
             }
+            .sheet(isPresented: $showTrailer, content: {
+                // Trailer full screen
+                EmptyView()
+            })
             .onAppear(perform: {
                 viewModel.getTrailers(id: movie.id ?? 123)
             })
+            .padding(5)
         }
     }
 }
