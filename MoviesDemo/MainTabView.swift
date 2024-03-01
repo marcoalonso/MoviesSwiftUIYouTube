@@ -19,6 +19,11 @@ struct MainTabView: View {
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
+            
+            FeedbackView()
+                .tabItem {
+                    Image(systemName: "gearshape")
+                }
         }
     }
 }

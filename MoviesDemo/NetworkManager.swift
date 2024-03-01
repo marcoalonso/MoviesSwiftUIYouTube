@@ -19,11 +19,11 @@ class NetworkManager: NSObject {
     static let shared = NetworkManager()
     private let cache = NSCache<NSString, UIImage>()
     
-    static let upcoming = "https://api.themoviedb.org/3/movie/upcoming?api_key=2cfa8720256036601fb9ac4e4bce1a9b&language=es-MX&page=1"
+    static let upcoming = "https://api.themoviedb.org/3/movie/upcoming?api_key=bbf4ee605b49ebabf960545fbfbb1e0a&language=es-MX&page=1"
     
-    static let nowPlaying = "https://api.themoviedb.org/3/movie/now_playing?api_key=2cfa8720256036601fb9ac4e4bce1a9b&language=es-MX&page=1"
+    static let nowPlaying = "https://api.themoviedb.org/3/movie/now_playing?api_key=bbf4ee605b49ebabf960545fbfbb1e0a&language=es-MX&page=1"
     
-    static let trending = "https://api.themoviedb.org/3/trending/all/day?api_key=2cfa8720256036601fb9ac4e4bce1a9b"
+    static let trending = "https://api.themoviedb.org/3/trending/all/day?api_key=bbf4ee605b49ebabf960545fbfbb1e0a"
     
     func getLisOfUpcomingMovies(completed: @escaping (Result<[DataMovie], APError>) -> Void ) {
         guard let url = URL(string: NetworkManager.upcoming) else {
@@ -129,7 +129,7 @@ class NetworkManager: NSObject {
     }
     
     func getListOfTrailers(id: Int, completed: @escaping (Result<[Trailer], APError>) -> Void ) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)/videos?api_key=2cfa8720256036601fb9ac4e4bce1a9b&language=es_MX") else {
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)/videos?api_key=bbf4ee605b49ebabf960545fbfbb1e0a&language=es_MX") else {
             completed(.failure(.invalidURL))
             return
         }
@@ -163,7 +163,7 @@ class NetworkManager: NSObject {
     }
     
     func searchMovies(name: String, completed: @escaping (Result<[DataMovie], APError>) -> Void ) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/search/movie?api_key=2cfa8720256036601fb9ac4e4bce1a9b&language=es-MX&page=1&include_adult=false&query=\(name)") else {
+        guard let url = URL(string: "https://api.themoviedb.org/3/search/movie?api_key=bbf4ee605b49ebabf960545fbfbb1e0a&language=es-MX&page=1&include_adult=false&query=\(name)") else {
             completed(.failure(.invalidURL))
             return
         }

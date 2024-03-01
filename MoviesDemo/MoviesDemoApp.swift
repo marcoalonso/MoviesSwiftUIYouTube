@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct MoviesDemoApp: App {
+    @AppStorage("isDarkModeOn") private var isDarkModeOn = false
     var body: some Scene {
         WindowGroup {
             MainTabView()
+                .preferredColorScheme(isDarkModeOn ? .dark : .light)
         }
     }
 }

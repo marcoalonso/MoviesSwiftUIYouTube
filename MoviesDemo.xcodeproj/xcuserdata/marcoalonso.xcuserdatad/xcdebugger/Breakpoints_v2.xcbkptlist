@@ -3,4 +3,118 @@
    uuid = "26F4F750-3CC7-4CDB-ADA5-569FF7773419"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87429FAB-39D6-4D22-96AC-EC7024C9A669"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoviesDemo/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "getLisOfUpcomingMovies(completed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9BFBEFBB-D770-403F-9DC8-D4475626599E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoviesDemo/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getLisOfUpcomingMovies(completed:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9BFBEFBB-D770-403F-9DC8-D4475626599E - d6bbe98785848841"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MoviesDemo.NetworkManager.getLisOfUpcomingMovies(completed: (Swift.Result&lt;Swift.Array&lt;MoviesDemo.DataMovie&gt;, MoviesDemo.APError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MoviesDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcoalonso/Desktop/MoviesDemo/MoviesDemo/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "9BFBEFBB-D770-403F-9DC8-D4475626599E - d6bbe98785848841"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MoviesDemo.NetworkManager.getLisOfUpcomingMovies(completed: (Swift.Result&lt;Swift.Array&lt;MoviesDemo.DataMovie&gt;, MoviesDemo.APError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MoviesDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcoalonso/Desktop/MoviesDemo/MoviesDemo/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94DFF6B7-E411-4283-8490-BC48206846F8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoviesDemo/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getLisOfUpcomingMovies(completed:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "94DFF6B7-E411-4283-8490-BC48206846F8 - d6bbe9878584897f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MoviesDemo.NetworkManager.getLisOfUpcomingMovies(completed: (Swift.Result&lt;Swift.Array&lt;MoviesDemo.DataMovie&gt;, MoviesDemo.APError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MoviesDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcoalonso/Desktop/MoviesDemo/MoviesDemo/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  uuid = "94DFF6B7-E411-4283-8490-BC48206846F8 - d6bbe98785848afb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MoviesDemo.NetworkManager.getLisOfUpcomingMovies(completed: (Swift.Result&lt;Swift.Array&lt;MoviesDemo.DataMovie&gt;, MoviesDemo.APError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MoviesDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcoalonso/Desktop/MoviesDemo/MoviesDemo/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "644">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

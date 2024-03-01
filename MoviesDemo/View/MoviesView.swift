@@ -77,7 +77,7 @@ struct MoviesView: View {
                                             ProgressView()
                                         }
                                         .cornerRadius(12)
-                                        .frame(width: 250, height: 320)
+                                        .frame(width: 200, height: 320)
                                 }
                             }
                         }
