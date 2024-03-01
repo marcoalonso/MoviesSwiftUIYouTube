@@ -21,12 +21,12 @@ class NetworkManager: NSObject {
     
     static let upcoming = "https://api.themoviedb.org/3/movie/upcoming?api_key=bbf4ee605b49ebabf960545fbfbb1e0a&language=es-MX&page=1"
     
-    static let nowPlaying = "https://api.themoviedb.org/3/movie/now_playing?api_key=bbf4ee605b49ebabf960545fbfbb1e0a&language=es-MX&page=1"
+    static let nowPlaying = "https://api.themoviedb.org/3/movie/now_playing?api_key=bbf4ee605b49ebabf960545fbfbb1e0a&language=es-MX&page="
     
     static let trending = "https://api.themoviedb.org/3/trending/all/day?api_key=bbf4ee605b49ebabf960545fbfbb1e0a"
     
-    func getLisOfUpcomingMovies(completed: @escaping (Result<[DataMovie], APError>) -> Void ) {
-        guard let url = URL(string: NetworkManager.upcoming) else {
+    func getLisOfUpcomingMovies(numPage: Int, completed: @escaping (Result<MovieDataModel, APError>) -> Void ) {
+        guard let url = URL(string: NetworkManager.upcoming+"\(numPage)") else {
             completed(.failure(.invalidURL))
             return
         }
@@ -50,7 +50,7 @@ class NetworkManager: NSObject {
             do {
                let decoder = JSONDecoder()
                 let decodedResponse = try decoder.decode(MovieDataModel.self, from: data)
-                completed(.success(decodedResponse.results))
+                completed(.success(decodedResponse))
             } catch {
                 print("Debug: error \(error.localizedDescription)")
                 completed(.failure(.decodingError))

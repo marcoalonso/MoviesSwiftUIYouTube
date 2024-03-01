@@ -15,7 +15,7 @@ struct MoviesView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack {
                     Text("Proximos estrenos")
                         .font(.title2)
@@ -26,6 +26,7 @@ struct MoviesView: View {
                             ForEach(viewModel.upcomingMovies, id: \.id) { movie in
                                 NavigationLink {
                                     MovieDetailView(movie: movie)
+                                        
                                 } label: {
                                     KFImage(URL(string: "\(Constants.urlImages)\(movie.poster_path ?? Constants.placeholder)"))
                                         .resizable()
@@ -34,6 +35,11 @@ struct MoviesView: View {
                                         }
                                         .cornerRadius(12)
                                         .frame(width: 150, height: 210)
+                                        .task {
+                                            if viewModel.hasReachedEnd(of: movie) && !viewModel.isFetching {
+                                                await viewModel.fetchNextSetOfMovies()
+                                            }
+                                        }
                                 }
                             }
                         }
@@ -84,6 +90,7 @@ struct MoviesView: View {
                     }
                 }
             }
+            .padding(.horizontal, 20)
         }
     }
 }
